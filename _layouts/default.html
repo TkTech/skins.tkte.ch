@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal blog of Tyler Kennedy">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/css/style.css">
+    {% if page.css %}
+      {% for sheet in page.css %}
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/{{ sheet }}.css">
+      {% endfor %}
+    {% endif %}
+    {%- if site.google_id %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_id }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.google_id }}');
+    </script>
+    {% endif -%}
+  </head>
+  <body>
+    <main>
+      {{ content }}
+    </main>
+  </body>
+</html>

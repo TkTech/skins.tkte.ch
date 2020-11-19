@@ -1,0 +1,20 @@
+---
+title: skins.tkte.ch
+layout: default
+---
+<h1>skins.tkte.ch</h1>
+
+This is a historical archive of <em>{{ site.posts|size }}</em> minecraft skins
+posted on skins.tkte.ch.
+
+<ul class="unstyled">
+{% for post in site.posts %}
+  <li>
+    <article>
+      <span class="date">{{ post.date | date: '%b %d, %Y' }}</span>
+      <img src="{{ post.preview }}">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </article>
+  </li>
+{% endfor %}
+</ul>
